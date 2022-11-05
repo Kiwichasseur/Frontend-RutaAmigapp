@@ -1,0 +1,18 @@
+.my-btn-primary {
+    background-color: var(--btn-primary-bg-white);
+    border: 0.2em solid var(--btn-primary-border-color);
+    border-radius: 5px;
+    padding: 0.2em 1em;
+    margin: 0 auto;
+    color: rgb(38, 115, 101);
+    font-weight: 500;
+    transition: .3s;
+
+}
+
+.my-btn-primary:hover {
+    background-color: var(--btn-primary-bg);
+    color: var(--color-white);
+    font-weight: 500;
+    transition: .3s;
+}
