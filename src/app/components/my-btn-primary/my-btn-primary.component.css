@@ -1,9 +1,8 @@
 .my-btn-primary {
-    background-color: var(--btn-primary-bg-white);
-    border: 0.2em solid var(--btn-primary-border-color);
+    background-color: var(--color-white);/*revisar variables que no funcionan*/
+    border: 0.2em solid rgb(38, 115, 101);
     border-radius: 5px;
     padding: 0.2em 1em;
-    margin: 0 auto;
     color: rgb(38, 115, 101);
     font-weight: 500;
     transition: .3s;

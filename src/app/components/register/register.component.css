@@ -119,10 +119,11 @@ input[type="checkbox"]:checked::after {
     font-weight: 500;
     /* position: absolute; */
     z-index: 1;
-    /* left: 0px; */
-    /* top: 0px; */
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+element.style {
+    margin: auto;
 }

@@ -2,9 +2,6 @@
     --color-primary:#F29F05;
     --color-white: rgb(240, 240, 240);
     --color-secondary:rgb(38, 115, 101);
-    --btn-primary-bg-white:rgb(255, 255, 255);
-    --btn-primary-bg:rgb(38, 115, 101);
-    --btn-primary-border-color:rgb(38, 115, 101);
 }
 * {
     margin: 0px;
@@ -13,16 +10,16 @@
 }
 input:focus {
     outline: none;
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid rgb(38, 115, 101);
     transition: .3s;
 }
 
 a{
     text-decoration: none;
-    color: var(--color-primary);
+    color: #F29F05
 }
 a:hover{
     text-decoration: none;
-    color: var(--color-secondary);
+    color: rgb(38, 115, 101);
     transition: .2s; 
 }
