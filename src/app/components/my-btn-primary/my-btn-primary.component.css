@@ -6,7 +6,11 @@
     color: rgb(38, 115, 101);
     font-weight: 500;
     transition: .3s;
-
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:0px auto
 }
 
 .my-btn-primary:hover {

@@ -1,0 +1,27 @@
+<main>
+    <article class="principal-container">
+        <article class="form-container">
+            <section class="mid-container">
+                <article class="logo-container">
+                    <img src="../assets/img/logo.png" alt="logo" class="responsive">
+                </article>
+            </section>
+            <section class="mid-container">
+                <header>
+                    <h1 class="principal-title">REGISTRO</h1>
+                </header>
+                <form #userlogin="ngForm" (ngSubmit)="onIngresar(userlogin.value)">
+                    <input class="input" type="text" id="email" name="email" placeholder="Correo" ngModel />
+                    <input class="input" type="password" id="password" name="password" placeholder="Contraseña"
+                        ngModel />
+                    <!--   <button class="my-btn-primary"  type="submit" id="ingresar" name="ingresar">INGRESAR</button> -->
+                    <app-my-btn-primary></app-my-btn-primary>
+                    <label class="log-in">Si no tienes cuenta registrate <a href="./register.html">aquí</a> </label>
+                </form>
+            </section>
+            {{email}}
+            {{password}}
+
+        </article>
+    </article>
+</main>
