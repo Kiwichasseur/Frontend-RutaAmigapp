@@ -1,0 +1,78 @@
+<div class="mx-auto container center-container">
+    <h3>Nuevo usuario:</h3>
+    <hr>
+    <form #formRegisterUsuario="ngForm" (ngSubmit)="onSubmit(formRegisterUsuario)">
+       
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="nombreUsuario">Nombre usuario</label>
+                    <input type="text" class="form-control" id="nombreUsuario" aria-describedby="Ingrese su nombre"
+                        placeholder="Ingrese su nombre" [(ngModel)]="usuario.nombre_usuario" name="nombre_usuario">
+                    <!-- <small id="nombreUsuarioHelp" class="form-text text-muted">Ingrese su nombre</small> -->
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="apellidoUsuario">Apellido usuario</label>
+                    <input type="text" class="form-control" id="apellidoUsuario" placeholder="Ingrese su apellido"
+                        [(ngModel)]="usuario.apellido_usuario" name="apellido_usuario">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group py-4">
+                    <label for="correoUsuario">Correo usuario</label>
+                    <input type="text" class="form-control" id="correoUsuario" aria-describedby="Ingrese su correo"
+                        placeholder="Ingrese su correo" required [(ngModel)]="usuario.correo_usuario"
+                        name="correo_usuario">
+                    <!-- <small id="nombreUsuarioHelp" class="form-text text-muted">Ingrese su nombre</small> -->
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group py-4">
+                    <label for="passwordUsuario">Password usuario</label>
+                    <input type="password" id="password"class="form-control" id="passwordUsuario" placeholder="Ingrese su password"
+                        required [(ngModel)]="usuario.password_usuario" name="password_usuario">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <hr>
+                <div *ngIf="mensaje" class="alert alert-success alert-dismissible" role="alert">
+                    {{mensajeFinal.status}}
+                </div>
+                <div *ngIf="mensajeError" class="alert alert-danger alert-dismissible" role="alert">
+                    {{mensajeFinal.status}}
+                </div>
+                <button type="submit" class="btn btn-primary m-4" data-toggle="modal"
+                    data-target="#exampleModal">GUARDAR</button>
+                    
+                <button type="button" [routerLink]="['../usuarios']" class="btn btn-primary m-4">ATRAS</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
