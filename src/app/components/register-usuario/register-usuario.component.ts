@@ -45,7 +45,7 @@ export class RegisterUsuarioComponent implements OnInit {
       
       let data:Usuario = f.value
       data.estado_usuario= true
-      this.usuarioservice.saveUsuario('http://localhost:6060/app/registro',data).subscribe(
+      this.usuarioservice.saveUsuario('https://backendrutamiappbackservice.onrender.com/app/registro',data).subscribe(
         //capturamos el valor de descarga emitido por next() del observable y extraemos del json
         //el valor de la porpiedad "datos" con el cual definimos la porpiedad productos que estamos
         //interpolando en el HTML
