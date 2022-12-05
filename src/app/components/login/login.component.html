@@ -16,7 +16,7 @@
                         ngModel />
                     <!--   <button class="my-btn-primary"  type="submit" id="ingresar" name="ingresar">INGRESAR</button> -->
                     <app-my-btn-primary></app-my-btn-primary>
-                    <label class="log-in">Si no tienes cuenta registrate <a href="./register.html">aquí</a> </label>
+                    <label class="log-in">Si no tienes cuenta registrate <a [routerLink]="['']">aquí</a> </label>
                 </form>
             </section>
             {{email}}
