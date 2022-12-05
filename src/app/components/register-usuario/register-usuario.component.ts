@@ -46,23 +46,19 @@ export class RegisterUsuarioComponent implements OnInit {
       let data:Usuario = f.value
       data.estado_usuario= true
       this.usuarioservice.saveUsuario('https://backendrutamiappbackservice.onrender.com/app/registro',data).subscribe(
-        //capturamos el valor de descarga emitido por next() del observable y extraemos del json
-        //el valor de la porpiedad "datos" con el cual definimos la porpiedad productos que estamos
-        //interpolando en el HTML
-       
-       
-        
+        //ENviamos el usuario nuevo
         (data): any => { 
           console.log(data);
           this.mensajeFinal = data 
           this.mensaje = true
+          f.resetForm()
         },
         error => console.log("Ha ocurrido un error en la llamada: ", error))
     }
-    f.resetForm()
+    
     this.mensajeError = false
   }
-  //!f.valid?this.mensajeError=true:this.mensajeError=false
+
 }
 
   

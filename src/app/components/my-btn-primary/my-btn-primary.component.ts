@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-btn-primary',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-btn-primary.component.css']
 })
 export class MyBtnPrimaryComponent implements OnInit {
+
+  @Input() textoBoton: string;
 
   constructor() { }
 

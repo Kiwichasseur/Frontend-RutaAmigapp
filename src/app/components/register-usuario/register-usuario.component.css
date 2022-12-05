@@ -1,0 +1,32 @@
+.my-btn-primary {
+    background-color: var(--color-white);/*revisar variables que no funcionan*/
+    border: 0.2em solid rgb(38, 115, 101);
+    border-radius: 5px;
+    padding: 0.2em 1em;
+    color: rgb(38, 115, 101);
+    font-weight: 500;
+    transition: .3s;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:0px auto;
+    width:100%
+}
+
+
+.my-btn-primary:hover {
+    background-color: var(--btn-primary-bg);
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+h3{
+    color: rgb(38, 115, 101);
+}
+
+hr{
+    border:1px solid #F29F05
+}
+
+  

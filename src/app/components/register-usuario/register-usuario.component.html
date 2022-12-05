@@ -47,10 +47,16 @@
                 <div *ngIf="mensajeError" class="alert alert-danger alert-dismissible" role="alert">
                     {{mensajeFinal.status}}
                 </div>
-                <button type="submit" class="btn btn-primary m-4" data-toggle="modal"
-                    data-target="#exampleModal">GUARDAR</button>
-                    
-                <button type="button" [routerLink]="['../usuarios']" class="btn btn-primary m-4">ATRAS</button>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-2">
+                <button type="submit" class="my-btn-primary" data-toggle="modal"
+                data-target="#exampleModal">GUARDAR</button>
+            </div>
+            <div class="col-2">
+                <button type="button" [routerLink]="['../usuarios']" class="my-btn-primary ">ATRAS</button>
             </div>
         </div>
     </form>
