@@ -1,37 +1,33 @@
 <div class="mx-auto container center-container">
-
-    <div *ngIf="usuarios.length==0; else tableUsuario">
-        <div class="lds-roller">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+    <div class="row">
+        <div class="col-2 pb-2">
+            
+            <button [routerLink]="['../usuarioRegister']" class="my-btn-primary">NUEVO USUARIO</button>
         </div>
-    </div>
-    <ng-template #tableUsuario>
-        <div class="row">
-            <div class="col-2 pb-2">
-                <button [routerLink]="['../usuarioRegister']" class="my-btn-primary">NUEVO USUARIO</button>
-            </div>
 
-            <div class="col-12">
-                <table
-                    class="text-center table table-bordered table-responsive table-center table-hover table-striped table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">idUsuario</th>
-                            <th scope="col">Nombre Usuario</th>
-                            <th scope="col">Apellido Usuario</th>
-                            <th scope="col">Correo Usuario</th>
-                            <th scope="col">Estado Usuario</th>
-                            <th scope="col">Fecha creacion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <div class="col-12 contenedor-table">
+            <table
+                class="text-center table table-bordered table-responsive table-center table-hover table-striped table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">idUsuario</th>
+                        <th scope="col">Nombre Usuario</th>
+                        <th scope="col">Apellido Usuario</th>
+                        <th scope="col">Correo Usuario</th>
+                        <th scope="col">Estado Usuario</th>
+                        <th scope="col">Fecha creacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="mx-auto text-center" *ngIf="loading; else tableUsuario">
+                        <td colspan="6">
+                            <h3>Cargando datos...</h3>
+                            <span class="loader"></span>
+                        </td>
+
+                    </tr>
+
+                    <ng-template #tableUsuario>
                         <tr *ngFor="let usuario of usuarios">
                             <th scope="row">{{usuario.idusuario}}</th>
                             <td scope="row">{{usuario.nombre_usuario}}</td>
@@ -42,22 +38,22 @@
                                 {{usuario.estado_usuario?'Activo':'Inactivo'}}</td>
                             <td scope="row">{{usuario.fecha_creacion}}</td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
+                    </ng-template>
+
+                </tbody>
+            </table>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Atras</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Siguiente</a>
-                </li>
-            </ul>
-        </nav>
-    </ng-template>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li id="btnAtras" class="page-item disabled">
+                <a (click)="atras()" class="page-link" tabindex="-1">Atras</a>
+            </li>
+            <!-- <li class="page-item" *ngFor='let item of [].constructor(itemsPaginado); let i = index'><a class="page-link" href="#">{{i+1}}</a></li> -->
+            <li id="btnSiguiente" class="page-item">
+                <a (click)="siguiente()" class="page-link" tabindex="1">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+
 </div>

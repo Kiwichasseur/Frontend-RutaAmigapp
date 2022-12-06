@@ -13,17 +13,18 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  getAllUsuarios(route: string){
+  getAllUsuarios(route: string) {
     return this.http.get(route)
   }
 
-  saveUsuario(route: string,usuariodata:Usuario){
-    let config:any = {
+  saveUsuario(route: string, usuariodata: Usuario) {
+    let config: any = {
       responseType: "json"
     }
-   
-    //Notese que como tercer parametro se pasa la configuracion de la request
     return this.http.post(route, usuariodata, config);
-    
+  }
+
+  navegacionUsuario(route: string) {
+    return this.http.get(route)
   }
 }
