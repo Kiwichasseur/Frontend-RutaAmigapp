@@ -16,17 +16,18 @@
                         <th scope="col">Correo Usuario</th>
                         <th scope="col">Estado Usuario</th>
                         <th scope="col">Fecha creacion</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="mx-auto text-center" *ngIf="loading; else tableUsuario">
-                        <td colspan="6">
+                        <td colspan="7">
                             <h3>Cargando datos...</h3>
                             <span class="loader"></span>
                         </td>
 
                     </tr>
-
+                    <pre>{{usuarios}}</pre>
                     <ng-template #tableUsuario>
                         <tr *ngFor="let usuario of usuarios">
                             <th scope="row">{{usuario.idusuario}}</th>
@@ -37,11 +38,17 @@
                                 [ngClass]="{'bg-success':usuario.estado_usuario,'bg-danger':!usuario.estado_usuario}">
                                 {{usuario.estado_usuario?'Activo':'Inactivo'}}</td>
                             <td scope="row">{{usuario.fecha_creacion}}</td>
+                            <td scope="row"><button class="btn btn-danger" (click)="deleteUsuario(usuario.idusuario)">ELIMINAR</button></td>
                         </tr>
                     </ng-template>
 
                 </tbody>
             </table>
+            <span *ngIf="usuarios.length<=1; else showThis"></span>
+            <ng-template #showThis>      
+                <span>Numero de usuarios:{{usuarios.length}}</span>
+            </ng-template>
+            
         </div>
     </div>
     <nav aria-label="Page navigation example">

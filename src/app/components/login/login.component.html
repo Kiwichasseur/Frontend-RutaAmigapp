@@ -8,11 +8,11 @@
             </section>
             <section class="mid-container">
                 <header>
-                    <h1 class="principal-title">REGISTRO</h1>
+                    <h1 class="principal-title">LOGIN</h1>
                 </header>
-                <form #userlogin="ngForm" (ngSubmit)="onIngresar(userlogin.value)">
-                    <input class="input" type="text" id="email" name="email" placeholder="Correo" ngModel />
-                    <input class="input" type="password" id="password" name="password" placeholder="Contraseña"
+                <form [formGroup]="formLogin" (ngSubmit)="onIngresar()">
+                    <input class="input" type="text" id="email" name="email" placeholder="Correo" formControlName="email" ngModel />
+                    <input class="input" type="password" id="password" name="password" placeholder="Contraseña" formControlName="password"
                         ngModel />
                     <!--   <button class="my-btn-primary"  type="submit" id="ingresar" name="ingresar">INGRESAR</button> -->
                     <app-my-btn-primary></app-my-btn-primary>

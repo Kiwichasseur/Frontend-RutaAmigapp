@@ -24,6 +24,13 @@ export class UsuarioService {
     return this.http.post(route, usuariodata, config);
   }
 
+  deleteUsuario(route: string) {
+    let config: any = {
+      responseType: "json"
+    }
+    return this.http.delete(route,config);
+  }
+
   navegacionUsuario(route: string) {
     return this.http.get(route)
   }

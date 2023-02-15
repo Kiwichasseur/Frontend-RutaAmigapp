@@ -12,7 +12,7 @@ import { ContainerRegisterUsuarioComponent } from './components/container-regist
 const routes: Routes = [
   { path: '', component: ContainerRegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'map', component: ContainerMapComponent },
+  { path: 'mapa', component: ContainerMapComponent },
   { path: 'usuarios', component: ContainerUsuarioComponent },
   { path: 'usuarioRegister', component: ContainerRegisterUsuarioComponent },
   {path: '**', component:PrincipalContainerComponent}
