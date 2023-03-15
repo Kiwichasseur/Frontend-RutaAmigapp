@@ -5,3 +5,122 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.principal-container {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(38, 115, 101);
+    margin: 0;
+    padding: 0;
+}
+
+/*Contenedor formulario*/
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50vw;
+    height: 55vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%, -63%);
+}
+
+.mid-container {
+    border: 1px solid orange;
+    padding: 2em;
+}
+
+/*Tomar el primer hijo de medio contenedor (izquierda)*/
+.mid-container:nth-child(1) {
+    background: linear-gradient(180deg, #F2CB05 0%, #F29F05 45.31%, #F28705 100%);
+    box-shadow: 4px -4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 21px 0px 0px 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Tomar el segundo hijo de medio contenedor (derecha)*/
+.mid-container:nth-child(2) {
+    background-color: rgb(255, 255, 255);
+    box-shadow: -4px -4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 21px 21px 0px;
+}
+
+/*Busca el formulario que esta dentro de la clase mid-container*/
+.mid-container form {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 12px;
+    /*Pendiente cambiar*/
+}
+
+/*Contenedor imagen*/
+.logo-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Titulo principal*/
+.principal-title {
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    color: rgb(63, 95, 89);
+}
+
+/*Todos los input del formulario*/
+form .input {
+    width: 90%;
+    margin: 0px auto;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0.1em solid rgb(63, 95, 89);
+    margin: 0.4em;
+}
+
+/*Terminos y condiciones, log-in*/
+.terms-container,
+.log-in {
+    text-align: center;
+}
+
+form .input[type="checkbox"] {
+    appearance: none;
+    border: 0.2em solid var(--btn-primary-border-color);
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+form .input[type="checkbox"]:checked {
+    background-color: var(--btn-primary-border-color);
+    color: rgb(255, 255, 255);
+    position:relative
+}
+
+form .input[type="checkbox"]:checked::after {
+    content: "x";
+    color: white;
+    width: 18px;
+    height: 17px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-9px, -11px);
+    font-weight: 500;
+    /* position: absolute; */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
